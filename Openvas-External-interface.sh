@@ -9,7 +9,7 @@ service openvas-manager stop
 echo 'Configuring OpenVas System files to listen on external Connections'
 cd /lib/systemd/system
 sed -e 's/127.0.0.1/0.0.0.0/g' greenbone-security-assistant.service openvas-manager.service openvas-scanner.service -i
-systemctl deamon-reload
+systemctl daemon-reload
 cd ~
 echo "Starting OpenVas Services"
 service greenbone-security-assistant start
